@@ -185,7 +185,8 @@ class ProgrammerMagazineScraper {
           followAllRedirects: true,
           encoding: null,
         });
-        await fs.mkdir(folder);
+        fs
+        await fs.ensureDir(folder);
         await fs.writeFile(filename, content);
         this.newMagazines.push(filename);
         console.log(filebase, 'ok');
